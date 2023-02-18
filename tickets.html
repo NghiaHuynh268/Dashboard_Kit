@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tickets</title>
+    <script src="./assets/js/jquery-3.6.1.min.js"></script>
+    <script src="./assets/js/bootstrap4.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8641004aff.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./assets/css/bootstrap4.min.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/css/tickets.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="opt-bar">
+        <div class="opt-bar-header">
+          <img src="./assets/images/logo.png" class="opt-bar-logo" />
+          <p class="opt-bar-title">Dashboard Kit</p>
+        </div>
+        <div class="dashboard-list1">
+          <a href="#overview-page" class="opt active">
+            <img src="./assets/images/overview.png" />
+            <p class="opt-name">Overview</p>
+          </a>
+          <a href="#tickets-page" class="opt">
+            <img src="./assets/images/tickets.png" />
+            <p class="opt-name">Tickets</p>
+          </a>
+          <a href="#ideas-page" class="opt">
+            <img src="./assets/images/ideas.png" />
+            <p class="opt-name">Ideas</p>
+          </a>
+          <a href="#contacts-page" class="opt">
+            <img src="./assets/images/contacts.png" />
+            <p class="opt-name">Contacts</p>
+          </a>
+          <a href="#agents-page" class="opt">
+            <img src="./assets/images/agents.png" />
+            <p class="opt-name">Agents</p>
+          </a>
+          <a href="#articles-page" class="opt">
+            <img src="./assets/images/articles.png" />
+            <p class="opt-name">Articles</p>
+          </a>
+        </div>
+        <div class="dashboard-list2">
+          <a href="#settings-page" class="opt">
+            <img src="./assets/images/settings.png" />
+            <p class="opt-name">Settings</p>
+          </a>
+          <a href="#subscription-page" class="opt">
+            <img src="./assets/images/subscription.png" />
+            <p class="opt-name">Subscription</p>
+          </a>
+        </div>
+      </div>
+      <div id="overview-page" class="page">overview</div>
+      <div id="tickets-page" class="page">
+        <div class="page-header">
+          <div class="header-left">
+            <div class="header-title">Tickets</div>
+            <button class="search-btn">
+              <img src="./assets/images/search.png" />
+            </button>
+            <button class="notice-btn">
+              <img src="./assets/images/notice.png" />
+            </button>
+          </div>
+          <div class="header-right">
+            <p class="account-name">Jones Ferdinand</p>
+            <button class="account-btn">
+              <img src="./assets/images/photo.png" />
+            </button>
+          </div>
+        </div>
+        <div class="page-main">
+          <div class="main-header">
+            <div class="main-header-row1">
+              <p class="main-header-title">All tickets</p>
+              <button class="sort-btn" onclick="sortTickets()">
+                <img src="./assets/images/sort.png" />
+                <p class="sort">Sort</p>
+              </button>
+              <button class="filter-btn">
+                <img src="./assets/images/filter.png" />
+                <p class="sort">Filter</p>
+              </button>
+            </div>
+            <div class="main-header-row2">
+              <p class="ticket-details">Ticket-details</p>
+              <p class="customer-name">Customer name</p>
+              <p class="date">Date</p>
+              <p class="priority">Priority</p>
+            </div>
+          </div>
+          <div class="main-body"></div>
+          <div class="main-footer">
+            <div class="row-number-group">
+              <p class="rowperpage">Rows per page:</p>
+              <p class="row-number">8</p>
+              <button class="drop-down-btn">
+                <img src="./assets/images/dropdown.png" />
+              </button>
+            </div>
+            <div class="page-number-group">
+              <p class="page-number">1-8 of 1240</p>
+              <button class="arrow-left-btn">
+                <img src="./assets/images/arrow - left.png" />
+              </button>
+              <button class="arrow-right-btn">
+                <img src="./assets/images/arrow - right.png" />
+              </button>
+            </div>
+          </div>
+          <div class="add-form">
+            <input
+              type="text"
+              class="add-img"
+              placeholder="Enter image's link"
+            />
+            <input type="text" class="add-title" placeholder="Enter title" />
+            <input type="text" class="add-name" placeholder="Enter name" />
+            <input type="text" class="add-datepicker" />
+            <input type="text" class="timenow" disabled />
+            <div class="chose-priority">
+              <label>Chose priority: </label>
+              <select class="add-select">
+                <option>HIGH</option>
+                <option>NORMAL</option>
+                <option>LOW</option>
+              </select>
+            </div>
+            <button class="save-add-btn" onclick="saveAdd()">Save</button>
+          </div>
+          <div class="edit-form">
+            <input type="text" class="edit-img" />
+            <input type="text" class="edit-title" />
+            <input type="text" class="edit-name" />
+            <input type="text" class="edit-datepicker" />
+            <input type="text" class="timenow" disabled />
+            <div class="chose-priority">
+              <label>Chose priority: </label>
+              <select class="edit-select">
+                <option value="HIGH">HIGH</option>
+                <option value="NORMAL">NORMAL</option>
+                <option value="LOW">LOW</option>
+              </select>
+            </div>
+            <button class="save-edit-btn" onclick="saveEdit()">Save</button>
+          </div>
+        </div>
+      </div>
+      <div id="ideas-page" class="page">ideas</div>
+      <div id="contacts-page" class="page">contacts</div>
+      <div id="agents-page" class="page">agents</div>
+      <div id="articles-page" class="page">articles</div>
+      <div id="setting-page" class="page">setting</div>
+      <div id="subcription-page" class="page">subcription</div>
+      <div class="blur-bg" onclick="hideBlurBg()"></div>
+    </main>
+    <script type="module" src="./assets/js/tickets.js"></script>
+  </body>
+</html>

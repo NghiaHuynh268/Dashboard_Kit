@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+input,
+input:focus,
+select {
+  box-shadow: none;
+  outline: none;
+}
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  color: #a4a6b3;
+}
+li {
+  list-style: none;
+}

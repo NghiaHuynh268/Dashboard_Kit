@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="./assets/js/jquery-3.6.1.min.js"></script>
+    <script src="./assets/js/bootstrap4.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8641004aff.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/bootstrap4.min.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="page-form">
+        <div class="page-header">
+          <img src="./assets/images/logo.png" class="page-logo" />
+          <p class="page-name">Dashboard Kit</p>
+          <h2 class="page-title">Log In to Dashboard Kit</h2>
+          <p class="page-describe">Enter your email and password below</p>
+        </div>
+        <form class="form-login">
+          <div class="email-group">
+            <label class="email-label">Email</label>
+            <input
+              type="text"
+              class="email-input"
+              placeholder="Email address"
+              onkeyup="checkEmail()"
+            />
+          </div>
+          <p class="email-error"></p>
+          <div class="password-group">
+            <label class="password-label">Password</label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+            <input
+              type="password"
+              class="password-input"
+              placeholder="Password"
+              onkeyup="checkPass()"
+            />
+            <i
+              class="fa-regular fa-eye-slash close-eye"
+              onclick="showPass()"
+            ></i>
+            <i class="fa-regular fa-eye open-eye" onclick="hidePass()"></i>
+          </div>
+          <p class="password-error"></p>
+          <button class="login-btn" onclick="login()" type="button">
+            Log in
+          </button>
+          <p class="signup">
+            Don't have an account?
+            <a href="#">Sign up</a>
+          </p>
+        </form>
+      </div>
+    </main>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
